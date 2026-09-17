@@ -1,0 +1,691 @@
+/* ============================================================
+   COIN TABLE - TOKEN SCANNER BOX POLISH (TRANSPARENT & RETICLE FRAMES)
+   ============================================================ */
+
+/* Section Spacing */
+.section.top-markets-section {
+  padding-top: 36px;
+  padding-bottom: 68px;
+  position: relative;
+}
+
+/* Outer Card - Transparent, Frameless with Fade-out Polish */
+.ctable-scanner-card {
+  width: 100%;
+  background: rgba(15, 17, 21, 0.42) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border: none !important;
+  border-radius: 20px !important;
+  padding: 18px 22px 24px !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Header Matching Token Scanner Box */
+.ctable-scanner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 0 2px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ctable-scanner-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ctable-scanner-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #16181e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.ctable-scanner-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+.ctable-scanner-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Category Filter Pills in Scanner Dark Style */
+.ctable-category-pills {
+  display: flex;
+  align-items: center;
+  background: #14161c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3px;
+  border-radius: 999px;
+  gap: 2px;
+}
+
+.ctable-cat-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.ctable-cat-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ctable-cat-btn.active {
+  color: #ffffff;
+  background: #22252c;
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Action Button Matching Scanner Ref Action Btn */
+.ctable-action-circle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #181a20;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.ctable-action-circle-btn:hover {
+  background: #22252c;
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translate(1px, -1px);
+}
+
+/* Inner Box */
+.ctable-inner-box {
+  position: relative;
+  padding: 6px 0 0;
+}
+
+/* Table Column Header */
+.ctable-scanner-head {
+  display: grid;
+  grid-template-columns: 46px 2.2fr 1.15fr 1.05fr 1.2fr 1.2fr 1.35fr 144px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  height: 38px;
+  margin-bottom: 6px;
+}
+
+.ctable-scanner-head .ch {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.ctable-scanner-head .ch.num {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* Rows Matching TokenScannerBox (Frameless, Transparent, Fade-out) */
+.ctable-scanner-row {
+  background: rgba(22, 25, 33, 0.72);
+  border-radius: 12px;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 46px 2.2fr 1.15fr 1.05fr 1.2fr 1.2fr 1.35fr 144px;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.18s ease;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  height: 58px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+.ctable-scanner-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Reduced Calm Hover - No border lines, no shadows */
+.ctable-scanner-row:hover {
+  background: rgba(32, 34, 41, 0.72) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Rank Badge */
+.scanner-rank-badge {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  background: #111216;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 3px 6px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Coin Left Identity matching scanner-row-left */
+.scanner-cell-coin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.scanner-coin-logo-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111216;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.scanner-coin-logo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.scanner-coin-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scanner-coin-sym {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  background: #111216;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  width: fit-content;
+}
+
+/* Price & Ticking Flash */
+.scanner-cell-price {
+  text-align: right;
+  justify-self: end;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+  padding: 3px 6px;
+  border-radius: 6px;
+  transition: background-color 0.85s ease, color 0.4s ease;
+}
+
+.scanner-cell-price.flash-up {
+  background-color: rgba(0, 229, 153, 0.2) !important;
+  color: #00e599 !important;
+}
+
+.scanner-cell-price.flash-down {
+  background-color: rgba(255, 77, 106, 0.2) !important;
+  color: #ff4d6a !important;
+}
+
+/* 24h % Frameless Clean Data */
+.scanner-pill-green {
+  background: transparent !important;
+  color: #00e599 !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0 !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.scanner-pill-red {
+  background: transparent !important;
+  color: #ff4d6a !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0 !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Circulating Supply & Visual Bar */
+.scanner-supply-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  width: 100%;
+}
+
+.scanner-supply-val {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.75);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 2px;
+  max-width: 100%;
+}
+
+.scanner-supply-sym {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+  margin-left: 2px;
+  max-width: 52px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.scanner-supply-bar-track {
+  width: 80px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.scanner-supply-bar-fill {
+  height: 100%;
+  background: #38bdf8;
+  border-radius: 3px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .ctable-scanner-head,
+  .ctable-scanner-row {
+    grid-template-columns: 42px 2fr 1.1fr 1fr 1.3fr 136px;
+  }
+  .hide-md {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .ctable-scanner-card {
+    padding: 14px 10px 18px !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+  }
+  
+  .ctable-scanner-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .ctable-scanner-header-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  
+  .ctable-category-pills {
+    max-width: calc(100% - 46px);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-shrink: 1;
+  }
+  
+  .ctable-category-pills::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .ctable-cat-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Horizontal Side-Scrolling Table Wrapper */
+  .ctable-scroll-wrap {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    padding-bottom: 6px;
+  }
+
+  .ctable-scroll-wrap::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .ctable-scroll-wrap::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 3px;
+  }
+
+  .ctable-scroll-wrap::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 3px;
+  }
+
+  /* Grid Layout: Total 662px min-width with 0 gap for pixel-perfect sticky pinning */
+  .ctable-scanner-head,
+  .ctable-scanner-row {
+    display: grid !important;
+    grid-template-columns: 118px 70px 62px 92px 92px 110px 118px !important;
+    min-width: 662px !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .ctable-scanner-head {
+    height: 34px !important;
+    margin-bottom: 6px !important;
+    background: transparent !important;
+  }
+
+  .ctable-scanner-row {
+    height: 46px !important;
+    margin-bottom: 5px !important;
+    border-radius: 10px !important;
+    background: rgba(21, 23, 29, 0.5) !important;
+  }
+
+  /* Hide Rank on Mobile to maximize room */
+  .ctable-scanner-head .ch.ch-rank,
+  .ctable-scanner-row .cell-rank {
+    display: none !important;
+  }
+
+  /* Sticky Pinned 1: Token Column (left: 0) */
+  .ctable-scanner-head .ch.ch-token {
+    position: sticky;
+    left: 0;
+    z-index: 12;
+    background-color: #0f1116 !important;
+    padding: 0 4px 0 8px !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 10px !important;
+    letter-spacing: 0.05em;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-self: stretch !important;
+  }
+
+  .ctable-scanner-row .cell-token {
+    position: sticky;
+    left: 0;
+    z-index: 10;
+    background-color: #15171e !important;
+    padding: 0 4px 0 8px !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-self: stretch !important;
+  }
+
+  .ctable-scanner-row:hover .cell-token {
+    background-color: #1d2029 !important;
+  }
+
+  /* Smaller Token Identity */
+  .ctable-scanner-row .cell-token .scanner-coin-logo-wrap {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+  }
+
+  .ctable-scanner-row .cell-token .scanner-coin-name {
+    font-size: 11px !important;
+    font-weight: 600;
+    max-width: 48px;
+    letter-spacing: -0.01em;
+  }
+
+  .ctable-scanner-row .cell-token .scanner-row-verified svg {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .ctable-scanner-row .cell-token .scanner-coin-sym {
+    font-size: 8px !important;
+    padding: 0 3px !important;
+    border-radius: 3px;
+  }
+
+  /* Sticky Pinned 2: Price Column (left: 118px) */
+  .ctable-scanner-head .ch.ch-price {
+    position: sticky;
+    left: 118px;
+    z-index: 12;
+    background-color: #0f1116 !important;
+    padding: 0 6px !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-self: stretch !important;
+  }
+
+  .ctable-scanner-row .cell-price {
+    position: sticky;
+    left: 118px;
+    z-index: 10;
+    background-color: #15171e !important;
+    padding: 0 6px !important;
+    height: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end !important;
+    font-size: 11px !important;
+    text-align: right;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-self: stretch !important;
+  }
+
+  .ctable-scanner-row:hover .cell-price {
+    background-color: #1d2029 !important;
+  }
+
+  /* Sticky Pinned 3: 24h % Column (left: 188px) with subtle edge boundary */
+  .ctable-scanner-head .ch.ch-24h {
+    position: sticky;
+    left: 188px;
+    z-index: 12;
+    background-color: #0f1116 !important;
+    padding: 0 6px 0 2px !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 10px !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-self: stretch !important;
+  }
+
+  .ctable-scanner-row .cell-24h {
+    position: sticky;
+    left: 188px;
+    z-index: 10;
+    background-color: #15171e !important;
+    padding: 0 6px 0 2px !important;
+    height: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-self: stretch !important;
+  }
+
+  .ctable-scanner-row:hover .cell-24h {
+    background-color: #1d2029 !important;
+  }
+
+  /* Subtle lighting mark on the middle divider between 24h % and Market Cap */
+  .ctable-scroll-wrap.at-scroll-start .ch.ch-24h::after,
+  .ctable-scroll-wrap.at-scroll-start .cell-24h::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1.5px;
+    background: linear-gradient(180deg, rgba(56, 189, 248, 0.05) 0%, rgba(56, 189, 248, 0.5) 50%, rgba(56, 189, 248, 0.05) 100%);
+    box-shadow: 0 0 5px rgba(56, 189, 248, 0.35);
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+    pointer-events: none;
+    z-index: 15;
+  }
+
+  /* When the user starts side-scrolling to view other rows, it disappears */
+  .ctable-scroll-wrap.is-scrolled .ch.ch-24h::after,
+  .ctable-scroll-wrap.is-scrolled .cell-24h::after {
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out;
+  }
+
+  .ctable-scanner-row .cell-24h .scanner-pill-green,
+  .ctable-scanner-row .cell-24h .scanner-pill-red {
+    font-size: 10px !important;
+    font-weight: 600;
+  }
+
+  /* Side-Scrolling Columns (Active on mobile via horizontal scroll) */
+  .ctable-scanner-head .ch.ch-mcap,
+  .ctable-scanner-row .cell-mcap {
+    display: flex !important;
+    padding: 0 8px !important;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 11px !important;
+  }
+
+  .ctable-scanner-head .ch.ch-vol,
+  .ctable-scanner-row .cell-vol {
+    display: flex !important;
+    padding: 0 8px !important;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 11px !important;
+  }
+
+  .ctable-scanner-head .ch.ch-supply,
+  .ctable-scanner-row .cell-supply {
+    display: flex !important;
+    padding: 0 8px !important;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .ctable-scanner-row .cell-supply .scanner-supply-stack {
+    align-items: flex-end !important;
+    width: 100% !important;
+  }
+
+  .ctable-scanner-row .cell-supply .scanner-supply-val {
+    font-size: 10.5px !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: baseline !important;
+    justify-content: flex-end !important;
+  }
+
+  .ctable-scanner-row .cell-supply .scanner-supply-sym {
+    max-width: 44px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .ctable-scanner-row .cell-supply .scanner-supply-bar-track {
+    width: 60px !important;
+    height: 2px !important;
+    align-self: flex-end !important;
+  }
+
+  .ctable-scanner-head .ch.ch-spark,
+  .ctable-scanner-row .cell-spark {
+    display: flex !important;
+    padding: 0 6px !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ctable-scanner-row .cell-spark svg {
+    max-width: 95px !important;
+    height: 26px !important;
+  }
+
+  .ctable-scanner-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #0f121a !important;
+  }
+}
+

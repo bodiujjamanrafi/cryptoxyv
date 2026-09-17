@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070810" />
+    <meta name="description" content="Asteron — a real-time crypto market intelligence terminal. Live prices, charts and market data for thousands of coins." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="/fonts/CalSans-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/ScoutieSans-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Convergence&family=Doppio+One&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Asteron — Live Crypto Market Terminal</title>
+    <script>
+      (function () {
+        function purgeNetlify() {
+          var selectors = [
+            "iframe",
+            "#nl-badge-frame",
+            '[id*="nl-badge" i]',
+            '[class*="nl-badge" i]',
+            '[id*="netlify" i]',
+            '[class*="netlify" i]',
+            "[data-nf-variant]",
+            "[data-netlify-site-id]",
+            "[data-app-host]",
+            "[data-netlify-badge]",
+            "[data-netlify-drawer]",
+            "[data-netlify-deploy-id]",
+            'a[href*="netlify.com" i]',
+            'a[href*="netlify.app" i]',
+            'img[src*="netlify" i]',
+            'img[alt*="netlify" i]'
+          ];
+          for (var i = 0; i < selectors.length; i++) {
+            var elements = document.querySelectorAll(selectors[i]);
+            for (var j = 0; j < elements.length; j++) {
+              try { elements[j].remove(); } catch (e) {}
+            }
+          }
+        }
+
+        if (typeof document !== "undefined") {
+          // Intercept createElement for iframes and Netlify HUD scripts
+          try {
+            var origCreateElement = document.createElement;
+            document.createElement = function (tagName) {
+              var el = origCreateElement.apply(document, arguments);
+              var tag = String(tagName).toLowerCase();
+              if (tag === "iframe") {
+                el.style.display = "none";
+                el.style.visibility = "hidden";
+                el.style.width = "0px";
+                el.style.height = "0px";
+                el.style.position = "absolute";
+                el.style.left = "-99999px";
+                setTimeout(function () {
+                  try { el.remove(); } catch (e) {}
+                }, 0);
+              }
+              return el;
+            };
+          } catch (e) {}
+
+          purgeNetlify();
+
+          if (typeof MutationObserver !== "undefined") {
+            var observer = new MutationObserver(function () {
+              purgeNetlify();
+            });
+            observer.observe(document.documentElement, { childList: true, subtree: true });
+          }
+
+          document.addEventListener("DOMContentLoaded", purgeNetlify);
+          window.addEventListener("load", purgeNetlify);
+          setInterval(purgeNetlify, 200);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

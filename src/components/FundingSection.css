@@ -1,0 +1,417 @@
+/* ========================================================================= */
+/* FUNDING SECTION - RECENT FUNDING ROUNDS & CRYPTO FUNDRAISING TREND        */
+/* Exactly matching the 2nd reference image with high-tech cyberpunk polish  */
+/* ========================================================================= */
+
+.funding-trend-section {
+  padding: 48px 0 64px;
+  position: relative;
+}
+
+.funding-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.funding-col-left,
+.funding-col-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section Header Titles */
+.funding-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.funding-col-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.015em;
+  font-family: inherit;
+}
+
+.funding-link-action {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  transition: color 0.18s ease;
+  text-decoration: none;
+}
+.funding-link-action:hover {
+  color: #ffffff;
+}
+.funding-link-action .arrow-diag {
+  font-size: 13px;
+  transition: transform 0.18s ease;
+}
+.funding-link-action:hover .arrow-diag {
+  transform: translate(2px, -2px);
+}
+
+/* ========================================================================= */
+/* LEFT: Recent Funding Rounds List                                          */
+/* ========================================================================= */
+.funding-rounds-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.funding-round-card {
+  background: #111317;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 0 20px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  box-sizing: border-box;
+}
+.funding-round-card:hover {
+  background: #161920;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Left portion of card: Logo + Title + Subtitle */
+.funding-card-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.fund-logo-wrap {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.funding-card-title-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.funding-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.funding-project-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.funding-badge-new {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #00e599;
+  background: rgba(0, 229, 153, 0.12);
+  padding: 1.5px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+.funding-round-stage {
+  font-size: 11.5px;
+  font-weight: 500;
+}
+/* Stage color coding matching reference image */
+.stage-green {
+  color: #00e599;
+}
+.stage-blue {
+  color: #38bdf8;
+}
+.stage-muted {
+  color: #94a3b8;
+}
+
+/* Right portion of card: Amount + Date + Investor Avatars */
+.funding-card-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.funding-amount-date-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.funding-amount-val {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.funding-date-val {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.funding-investors-overlap {
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.funding-investor-circle {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+  margin-left: -7px;
+  border: 2px solid #111317;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+.funding-investor-circle:first-child {
+  margin-left: 0;
+}
+.funding-investor-circle.plus-pill {
+  background: #1a1e26;
+  color: #94a3b8;
+  font-size: 9.5px;
+  font-weight: 700;
+  border-color: #111317;
+}
+
+/* ========================================================================= */
+/* RIGHT: Crypto Fundraising Trend Container                                 */
+/* ========================================================================= */
+.fundraising-trend-box {
+  background: #0f1115;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0 !important;
+  padding: 22px 24px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+/* 2x2 Metric Stat Cards Grid */
+.trend-stats-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.trend-stat-card {
+  background: #13161c;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 13px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  box-sizing: border-box;
+}
+
+.trend-stat-label-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.trend-stat-label {
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.stat-peak-month { color: #00e599; }
+.stat-lowest-month { color: #f43f5e; }
+.stat-peak-rounds { color: #f59e0b; }
+.stat-total-tracked { color: #a855f7; }
+
+.trend-stat-val {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.015em;
+  margin-top: 2px;
+}
+
+.trend-stat-sub {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Dual Axis SVG Curve Chart */
+.trend-chart-container {
+  position: relative;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.trend-dual-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  display: block;
+}
+
+.chart-axis-label {
+  font-size: 9.5px;
+  fill: #64748b;
+  font-weight: 500;
+}
+
+.chart-month-label {
+  font-size: 10.5px;
+  fill: #64748b;
+  font-weight: 500;
+  transition: fill 0.15s ease;
+}
+.chart-month-label.active {
+  fill: #ffffff;
+  font-weight: 700;
+}
+
+/* Interactive Hover Details */
+.trend-hover-tooltip {
+  position: absolute;
+  top: -12px;
+  background: rgba(13, 16, 22, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 6px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 10.5px;
+  pointer-events: none;
+  z-index: 20;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+}
+.tooltip-month {
+  color: #ffffff;
+  font-weight: 700;
+}
+.tooltip-val-raised {
+  color: #00e599;
+  font-weight: 600;
+}
+.tooltip-val-rounds {
+  color: #a855f7;
+  font-weight: 600;
+}
+
+/* Bottom Chart Legend */
+.trend-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-line {
+  width: 16px;
+  height: 3px;
+  border-radius: 2px;
+}
+.green-dash {
+  background: #00e599;
+  box-shadow: 0 0 6px rgba(0, 229, 153, 0.6);
+}
+.purple-dash {
+  background: #a855f7;
+  box-shadow: 0 0 6px rgba(168, 85, 247, 0.6);
+}
+
+.legend-label {
+  font-size: 11.5px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ========================================================================= */
+/* Responsive layout                                                         */
+/* ========================================================================= */
+@media (max-width: 980px) {
+  .funding-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .funding-round-card {
+    padding: 0 12px;
+    height: 64px;
+  }
+  .funding-project-name {
+    font-size: 13px;
+  }
+  .trend-stats-2x2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin-bottom: 16px !important;
+  }
+  .trend-stat-card {
+    padding: 9px 11px !important;
+    border-radius: 8px !important;
+    min-width: 0 !important;
+  }
+  .trend-stat-label {
+    font-size: 9.5px !important;
+  }
+  .trend-stat-val {
+    font-size: 15px !important;
+    margin-top: 1px !important;
+  }
+  .trend-stat-sub {
+    font-size: 10px !important;
+  }
+  .funding-card-right {
+    gap: 8px;
+  }
+}

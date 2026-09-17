@@ -1,0 +1,2 @@
+/.netlify/scripts/*   /index.html   404!
+/*                    /index.html   200

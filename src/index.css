@@ -1,0 +1,463 @@
+@font-face {
+  font-family: "Scoutie Sans";
+  src: url("/fonts/ScoutieSans-VariableFont_wght.ttf") format("truetype-variations"),
+       url("/fonts/ScoutieSans-Regular.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cal Sans";
+  src: url("/fonts/CalSans-Regular.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Convergence";
+  src: url("/fonts/Convergence-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Doppio One";
+  src: url("/fonts/DoppioOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   Text Selection — Gold & Purple Mix
+   ============================================================ */
+::selection {
+  background-color: rgba(139, 92, 246, 0.45); /* Rich purple highlight */
+  color: #fcd34d; /* Bright luminous gold text */
+  text-shadow: 0 0 10px rgba(245, 181, 68, 0.45);
+}
+
+::-moz-selection {
+  background-color: rgba(139, 92, 246, 0.45);
+  color: #fcd34d;
+  text-shadow: 0 0 10px rgba(245, 181, 68, 0.45);
+}
+
+/* ============================================================
+   Asteron — Design System
+   Primary: Cal Sans · Subtitle: Scoutie Sans · Data: JetBrains Mono
+   ============================================================ */
+
+:root {
+  /* --- Base surfaces (obsidian) --- */
+  --bg: #070810;
+  --bg-2: #0b0d1a;
+  --surface: rgba(255, 255, 255, 0.055);
+  --surface-2: rgba(255, 255, 255, 0.09);
+  --surface-hover: rgba(255, 255, 255, 0.12);
+  --border: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  /* Solid panel base so cards read as heavy, substantial surfaces */
+  --panel: #0d1021;
+  --panel-strong: #111428;
+
+  /* --- Text --- */
+  --text: #eaecf5;
+  --text-dim: #b4b9d4;
+  --muted: #767ca0;
+  --faint: #4a4f6e;
+
+  /* --- Plasma accent (tech / charts) --- */
+  --cyan: #22d3ee;
+  --peri: #6e8bff;
+  --violet: #b66bff;
+  --plasma: linear-gradient(120deg, #22d3ee 0%, #6e8bff 48%, #b66bff 100%);
+  --plasma-soft: linear-gradient(120deg, rgba(34, 211, 238, 0.16), rgba(182, 107, 255, 0.16));
+
+  /* --- Gold: reserved for brand + Pro markers only --- */
+  --gold: #f5b544;
+
+  /* --- Market direction --- */
+  --up: #2bd9a6;
+  --up-soft: rgba(43, 217, 166, 0.12);
+  --down: #ff5c7c;
+  --down-soft: rgba(255, 92, 124, 0.12);
+
+  /* --- Type --- */
+  --font-primary: "Cal Sans", "Space Grotesk", system-ui, sans-serif;
+  --font-display: "Cal Sans", "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Cal Sans", "Inter", system-ui, sans-serif;
+  --font-sub: "Scoutie Sans", "Convergence", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* --- Geometry --- */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-xl: 30px;
+  --maxw: 1240px;
+  --shadow: 0 30px 70px -26px rgba(0, 0, 0, 0.9);
+  --glow: 0 0 0 1px rgba(110, 139, 255, 0.22), 0 22px 60px -22px rgba(110, 139, 255, 0.5);
+
+  /* --- Soft light fade at the top-middle of every box --- */
+  --top-fade: radial-gradient(130% 78% at 50% -12%, rgba(255, 255, 255, 0.09), transparent 56%);
+  /* --- Deep black shadow applied to all boxes --- */
+  --box-shadow-black: 0 24px 50px -18px rgba(0, 0, 0, 0.85), 0 8px 22px -10px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Fast, 1:1 hardware-accelerated scroll response; programmatic smooth scrolls handled via window.scrollTo */
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  line-height: 1.5;
+  /* Optimize touch responsiveness */
+  touch-action: pan-y;
+}
+
+/* The ambient background now lives in the <Background /> component
+   (src/components/Background.jsx) — pure CSS/SVG, no canvas. */
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input { font-family: inherit; }
+img { display: block; }
+
+::selection {
+  background: rgba(110, 139, 255, 0.32);
+  color: #fff;
+}
+
+/* --- Scrollbar --- */
+/* Single subtle scrollbar only on root window for desktop */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Eliminate nested scrollbars on container elements */
+#root, main, div, section {
+  scrollbar-width: none;
+}
+#root::-webkit-scrollbar, main::-webkit-scrollbar, div::-webkit-scrollbar, section::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* On mobile screens, completely eliminate all side scrolling lines & scrollbars */
+@media (max-width: 768px) {
+  html, body, #root, main, div, section, * {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  ::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
+
+/* ============================================================
+   Typography primitives
+   ============================================================ */
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+}
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.gradient-text {
+  background: var(--plasma);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================================
+   Layout helpers
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.section { padding: 92px 0; position: relative; }
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 38px;
+  flex-wrap: wrap;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(26px, 3.4vw, 40px);
+  letter-spacing: -0.02em;
+}
+.section-sub {
+  font-family: var(--font-sub);
+  color: var(--muted);
+  max-width: 46ch;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+/* Subtitle & descriptive texts across the application using Convergence */
+.hero-sub,
+.section-sub,
+.cta-sub,
+.hm-sub,
+.sec-card-sub,
+.mcards-sub,
+.ref-scanner-subtitle,
+.ref2-card-subheading,
+.ref2-disclaimer-subtext,
+.metric-subtext,
+.donut-clean-sub,
+.fund-deal-sub,
+.perf-block-sub,
+.perf-label,
+.glance-updated-text,
+.hero-meta-l {
+  font-family: var(--font-sub) !important;
+}
+
+/* ============================================================
+   Glass card
+   ============================================================ */
+.glass {
+  position: relative;
+  background:
+    var(--top-fade),
+    var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--box-shadow-black), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+.glass, .trend-card, .mcard, .feature, .stat, .dominance-card, .chart-card, .rail-card {
+  transform: none;
+}
+.glass:hover, .trend-card:hover, .mcard:hover, .feature:hover, .stat:hover, .dominance-card:hover, .chart-card:hover, .rail-card:hover {
+  transform: none !important;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14.5px;
+  letter-spacing: -0.01em;
+  transition: transform 0.18s ease, box-shadow 0.25s ease, background 0.25s ease;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px) scale(0.99); }
+.btn-primary {
+  position: relative;
+  color: #060713;
+  background: var(--plasma);
+  box-shadow: 0 12px 36px -14px rgba(110, 139, 255, 0.8);
+}
+.btn-primary:hover {
+  box-shadow: 0 18px 44px -12px rgba(110, 139, 255, 0.95);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+}
+.btn-ghost:hover {
+  background: var(--surface-hover);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+/* ============================================================
+   Pills / badges
+   ============================================================ */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 500;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+}
+.delta {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+.delta.up { color: var(--up); background: var(--up-soft); }
+.delta.down { color: var(--down); background: var(--down-soft); }
+
+/* Live dot */
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--up);
+  box-shadow: 0 0 0 0 rgba(43, 217, 166, 0.7);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(43, 217, 166, 0.6); }
+  70% { box-shadow: 0 0 0 7px rgba(43, 217, 166, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(43, 217, 166, 0); }
+}
+
+/* Shimmer skeleton */
+.skeleton {
+  background: linear-gradient(100deg, rgba(255,255,255,0.04) 30%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0.04) 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 8px;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+/* Entrance */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  overflow-x: clip;
+  max-width: 100%;
+  width: 100%;
+}
+
+body {
+  overflow-x: clip;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#root, main {
+  max-width: 100%;
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  .section { padding: 56px 0; }
+  .container { padding: 0 16px; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 44px 0; }
+  .container { padding: 0 12px; }
+}
+
+/* ============================================================
+   Netlify Badge & Injected Widget Permanent Suppression
+   Completely removes and hides any "Powered by Netlify" badges,
+   drawer buttons, preview panels, or injected widgets on both
+   mobile and desktop viewports.
+   ============================================================ */
+iframe,
+#nl-badge-frame,
+[id*="nl-badge" i],
+[class*="nl-badge" i],
+[id*="netlify" i],
+[class*="netlify" i],
+[data-nf-variant],
+[data-netlify-site-id],
+[data-app-host],
+[data-netlify-badge],
+[data-netlify-drawer],
+[data-netlify-deploy-id],
+a[href*="netlify.com" i],
+a[href*="netlify.app" i],
+img[src*="netlify" i],
+img[alt*="netlify" i],
+div:has(> #nl-badge-frame),
+div:has(> iframe),
+div:has(> a[href*="netlify.com" i]),
+div:has(> img[src*="netlify" i]),
+div:has(> img[alt*="netlify" i]) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -99999px !important;
+  top: -99999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  transform: scale(0) !important;
+  z-index: -99999 !important;
+}
