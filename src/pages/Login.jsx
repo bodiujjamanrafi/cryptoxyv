@@ -490,8 +490,9 @@ export default function Login() {
                       id="login-email"
                       type="email"
                       className="login-input"
-                      placeholder="trader@imrafi.com"
+                      placeholder="trader@asteron.io"
                       value={email}
+
 
                       onChange={(e) => setEmail(e.target.value)}
                       required

@@ -28,7 +28,8 @@ export default function AuthSuccessModal({ user, onContinue, onClose }) {
   const isApple = providerId.includes("apple");
 
   const displayName = user.displayName || user.name || user.email?.split("@")[0] || "Trader";
-  const email = user.email || "trader@imrafi.com";
+  const email = user.email || "trader@asteron.io";
+
 
 
   return (

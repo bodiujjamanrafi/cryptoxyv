@@ -14,26 +14,18 @@ import {
 } from "firebase/auth";
 import { getAnalytics, isSupported } from "firebase/analytics";
 
-// Resolve the authentication domain:
-// When accessed via custom domain (imrafi.com), routes through the Netlify rewrite proxy
-// On localhost, defaults to asteron5.firebaseapp.com
-const getAuthDomain = () => {
-  if (typeof window !== "undefined" && window.location.hostname.includes("imrafi.com")) {
-    return "imrafi.com";
-  }
-  return import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "asteron5.firebaseapp.com";
-};
-
 // Secure Firebase configuration loaded strictly from environment variables
+// Uses the canonical Firebase project authDomain (asteron5.firebaseapp.com)
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: getAuthDomain(),
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "asteron5.firebaseapp.com",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "asteron5",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "asteron5.firebasestorage.app",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "874907479966",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:874907479966:web:1e8cda6f8a7b21e151f08f",
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || "G-CCQR0W2BYZ",
 };
+
 
 // Initialize Firebase App safely (singleton with fallback to avoid build crashes)
 const activeConfig = firebaseConfig.apiKey
@@ -115,15 +107,15 @@ export function createFallbackUser(provider) {
   const id = Math.random().toString(36).substring(2, 9);
   return {
     uid: `${p}-${id}`,
-    email: `${p}.trader@imrafi.com`,
+    email: `${p}.trader@asteron.io`,
     displayName: `${provider} Trader`,
     photoURL: null,
     providerId: `${p}.com`,
     emailVerified: true,
     isFallback: true,
   };
-
 }
+
 
 // Auth API Methods
 export async function loginWithEmail(email, password) {
