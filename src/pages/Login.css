@@ -208,6 +208,57 @@
   color: #86efac;
 }
 
+/* Fallback Action Box */
+.login-fallback-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  margin-bottom: 14px;
+  animation: alertSlideIn 0.2s ease both;
+}
+
+.login-fallback-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: #94a3b8;
+  line-height: 1.35;
+}
+
+.login-fallback-info svg {
+  flex-shrink: 0;
+  color: #38bdf8;
+}
+
+.login-fallback-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 34px;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  width: 100%;
+}
+
+.login-fallback-btn:hover {
+  background: rgba(56, 189, 248, 0.25);
+  color: #ffffff;
+  border-color: #38bdf8;
+}
+
+
 /* Form Styles */
 .login-form {
   display: flex;
@@ -415,6 +466,120 @@
 .login-switch-btn:hover {
   color: #ffffff;
 }
+
+/* Social Icon Button Loading State */
+.login-social-icon-btn.social-loading {
+  opacity: 0.85;
+  cursor: wait;
+}
+
+.login-mini-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #38bdf8;
+  border-radius: 50%;
+  animation: loginSpin 0.7s linear infinite;
+  display: inline-block;
+}
+
+/* Active Session Card */
+.login-active-session {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 6px;
+}
+
+.login-session-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #1a1e2a;
+  border: 1px solid #283042;
+  border-radius: 12px;
+}
+
+.login-session-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 17px;
+  color: #0b0e14;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.login-session-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-session-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.login-session-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #f8fafc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.login-session-email {
+  font-size: 12px;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.login-session-provider {
+  font-size: 10.5px;
+  color: #38bdf8;
+  text-transform: capitalize;
+}
+
+.login-session-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-secondary-btn {
+  width: 100%;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: 9px;
+  color: #94a3b8;
+  background: transparent;
+  border: 1px solid #283042;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.login-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #f8fafc;
+  border-color: #3b4256;
+}
+
 
 /* Mobile Responsiveness */
 @media (max-width: 600px) {

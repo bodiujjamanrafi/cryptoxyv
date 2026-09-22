@@ -8,10 +8,23 @@
   status = 404
   force = true
 
+# Firebase Auth Handler Proxy for custom domain (imrafi.com)
+[[redirects]]
+  from = "/__/auth/*"
+  to = "https://asteron5.firebaseapp.com/__/auth/:splat"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+
+[[headers]]
+  for = "/__/auth/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
 
 [[headers]]
   for = "/*"
@@ -19,3 +32,4 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
+

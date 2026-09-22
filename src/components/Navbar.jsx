@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { searchCoins } from "../api/coingecko";
-
+import { useAuth } from "../context/AuthContext";
 import AsteronLogo from "./AsteronLogo";
 
 function Logo() {
@@ -184,6 +184,7 @@ function SearchBar() {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     let prev = false;
@@ -210,18 +211,45 @@ export default function Navbar() {
             <NavLink to="/funding" className={({ isActive }) => (isActive ? "active" : "")}>Fundraising</NavLink>
             <a href="/#pulse">Market Pulse</a>
             <a href="/#features">Platform</a>
-            <Link to="/login" className="nav-mobile-cta">
-              Launch Terminal
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </Link>
+            {currentUser ? (
+              <Link to="/login" className="nav-mobile-cta">
+                <span>{currentUser.displayName || currentUser.email}</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </Link>
+            ) : (
+              <Link to="/login" className="nav-mobile-cta">
+                Launch Terminal
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </Link>
+            )}
           </nav>
           <div className="nav-right">
             <SearchBar />
-            <Link to="/login" className="btn btn-primary nav-cta">Launch Terminal</Link>
+            {currentUser ? (
+              <Link
+                to="/login"
+                className="nav-user-pill"
+                title={`Signed in as ${currentUser.displayName || currentUser.email}`}
+              >
+                <span className="nav-user-avatar">
+                  {currentUser.photoURL ? (
+                    <img src={currentUser.photoURL} alt="" />
+                  ) : (
+                    (currentUser.displayName || currentUser.email || "U")[0].toUpperCase()
+                  )}
+                </span>
+                <span className="nav-user-name">
+                  {currentUser.displayName?.split(" ")[0] || "Trader"}
+                </span>
+              </Link>
+            ) : (
+              <Link to="/login" className="btn btn-primary nav-cta">Launch Terminal</Link>
+            )}
             <button className={`nav-burger ${menu ? "open" : ""}`} aria-label="Menu" onClick={() => setMenu((m) => !m)}>
               <span /><span /><span />
             </button>
           </div>
+
         </div>
       </header>
       {menu && <div className="nav-backdrop" onClick={() => setMenu(false)} />}

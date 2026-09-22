@@ -1,0 +1,185 @@
+/* ==========================================================================
+   MINIMALIST CRYPTO PRELOADER SCREEN
+   Ultra-refined, lightweight, premium cryptographic prism glyph.
+   Zero heavy cubes, zero heavy circles, zero extra text clutter.
+   Strictly centered. Laser-sharp SVG path-tracing & prismatic shimmer.
+   ========================================================================== */
+
+.crypto-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, #070a18 0%, #030409 65%, #010205 100%);
+  overflow: hidden;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.45s ease,
+              visibility 0.45s;
+  pointer-events: auto;
+}
+
+.crypto-preloader-out {
+  opacity: 0;
+  transform: scale(1.05);
+  filter: blur(12px);
+  visibility: hidden;
+  pointer-events: none !important;
+}
+
+/* Strictly Centered Minimalist Stage */
+.crypto-stage {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+/* Soft, Weightless Chromatic Aura */
+.crypto-aura {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 240, 255, 0.14) 0%,
+    rgba(168, 85, 247, 0.08) 40%,
+    transparent 70%
+  );
+  filter: blur(28px);
+  pointer-events: none;
+  animation: crypto-aura-breathe 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes crypto-aura-breathe {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.95;
+  }
+}
+
+/* Hairline Horizon Quantum Line */
+.crypto-horizon-line {
+  position: absolute;
+  width: 110px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 240, 255, 0.4) 30%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(245, 181, 68, 0.4) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+  filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.6));
+  animation: crypto-horizon-pulse 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes crypto-horizon-pulse {
+  0% {
+    transform: scaleX(0.75);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scaleX(1.15);
+    opacity: 0.85;
+  }
+}
+
+/* Levitating Crypto Prism Container */
+.crypto-prism-wrap {
+  position: relative;
+  width: 80px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: crypto-prism-levitate 3s ease-in-out infinite alternate;
+}
+
+@keyframes crypto-prism-levitate {
+  0% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}
+
+/* The SVG Glyph Container */
+.crypto-prism-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.35));
+}
+
+/* Animated Flowing Laser Stroke */
+.crypto-laser-stroke {
+  stroke-dasharray: 45 135;
+  stroke-dashoffset: 0;
+  animation: crypto-laser-travel 2.6s linear infinite;
+}
+
+.crypto-laser-stroke-rev {
+  stroke-dasharray: 40 120;
+  stroke-dashoffset: 0;
+  animation: crypto-laser-travel-rev 2.2s linear infinite;
+}
+
+@keyframes crypto-laser-travel {
+  0% {
+    stroke-dashoffset: 180;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes crypto-laser-travel-rev {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 160;
+  }
+}
+
+/* Core Celestial Spark at Prism Centroid */
+.crypto-centroid-spark {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00f0ff,
+              0 0 18px rgba(0, 240, 255, 0.9),
+              0 0 28px rgba(168, 85, 247, 0.7);
+  pointer-events: none;
+  animation: crypto-spark-flare 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes crypto-spark-flare {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 1;
+    box-shadow: 0 0 12px #00f0ff,
+                0 0 24px rgba(0, 240, 255, 1),
+                0 0 36px rgba(245, 181, 68, 0.8);
+  }
+}
